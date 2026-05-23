@@ -160,14 +160,17 @@ body { font-family: 'Outfit', sans-serif; background-color: var(--bg-dark); colo
 .log-item { margin-bottom: 0.8rem; color: var(--text-dim); display: flex; align-items: flex-start; gap: 10px; }
 .log-item.success { color: #4ade80; }
 
-/* Integrations Mockup */
-.ui-integrations { background: rgba(0,0,0,0.2); border-top: 1px solid var(--glass-border); display: flex; flex-direction: column; }
+/* Integrations Mockup Panel */
+.ui-integrations-panel { width: 100%; max-width: 500px; background: rgba(15, 15, 20, 0.95); padding: 0; display: flex; flex-direction: column; overflow: hidden; }
+.ui-integrations-header { padding: 2rem 2.5rem 1rem; border-bottom: 1px solid var(--glass-border); }
+.ui-integrations-header h3 { font-size: 1.5rem; color: var(--accent-cyan); margin-bottom: 0.5rem; }
+.ui-integrations-header p { color: var(--text-dim); font-size: 0.95rem; }
+
+.ui-integrations { display: flex; flex-direction: column; }
 .ui-integration-item { display: flex; align-items: center; padding: 1.5rem 2.5rem; border-bottom: 1px solid var(--glass-border); transition: background 0.3s; }
 .ui-integration-item:hover { background: rgba(255,255,255,0.02); }
-.int-icon { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.4rem; margin-right: 1.5rem; flex-shrink: 0; }
-.int-icon.discord { background: #5865F2; color: white; }
-.int-icon.spotify { background: #1DB954; color: white; }
-.int-icon.youtube { background: #FF0000; color: white; }
+.int-icon { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1.5rem; flex-shrink: 0; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); }
+.int-icon svg { width: 28px; height: 28px; }
 .int-info { flex: 1; display: flex; flex-direction: column; text-align: left; }
 .int-info strong { font-size: 1.2rem; margin-bottom: 5px; color: #fff; }
 .int-info span { font-size: 0.95rem; color: var(--text-dim); }

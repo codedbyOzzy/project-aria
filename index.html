@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ARIA - Limitless, Private, Autonomous AI OS</title>
     <meta name="description" content="ARIA is a zero-cost, fully private, autonomous Artificial Intelligence Operating System seamlessly integrated into your computer.">
-    <link rel="stylesheet" href="./style.css?v=2.1">
-    
-    <!-- Google Fonts: Outfit -->
+    <link rel="stylesheet" href="./style.css?v=2.2">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;600;800;900&display=swap" rel="stylesheet">
@@ -137,36 +135,51 @@
     <!-- 3. Real-world Showcase (Use Cases) -->
     <section id="showcase" class="padding-section">
         <div class="section-header reveal-up">
-            <h2 class="section-title">What can ARIA <span class="text-purple">do for you?</span></h2>
-            <p class="section-desc">Designed to augment human capabilities across every profession.</p>
+            <h2 class="section-title">Built for <span class="text-cyan">Pioneers</span></h2>
+            <p class="section-desc">Who needs a local AI Operating System?</p>
         </div>
-        
         <div class="showcase-grid">
-            <!-- Coder -->
-            <div class="showcase-card glass-panel hover-target reveal-left">
+            <!-- Developer -->
+            <div class="showcase-card glass-panel hover-target reveal-left delay-4">
                 <div class="card-icon">💻</div>
                 <h3>For Developers</h3>
                 <p>Select any spaghetti code or error log directly in VSCode. ARIA instantly analyzes, optimizes, and provides the solution right at your cursor without ever switching tabs.</p>
+                <!-- UI Mockup: Developer -->
+                <div class="ui-chat-snippet dev-snippet">
+                    <div class="chat-title">VS Code Integration</div>
+                    <ul>
+                        <li><span style="color:#f87171;">Error:</span> Cannot read properties of undefined (reading 'map')</li>
+                        <li><strong>ARIA:</strong> Found it. The `data.users` array is undefined on line 42. Adding optional chaining `data.users?.map(...)` will fix this safely.</li>
+                    </ul>
+                </div>
             </div>
-            
+
             <!-- Professional -->
             <div class="showcase-card glass-panel hover-target reveal-up delay-2">
                 <div class="card-icon">📊</div>
                 <h3>For Professionals</h3>
                 <p>Read hundreds of pages of local reports while you sip your coffee. ARIA digests massive documents and drafts perfect email summaries in seconds.</p>
+                <!-- UI Mockup: Professional -->
+                <div class="ui-chat-snippet prof-snippet" style="border-color: var(--accent-cyan);">
+                    <div class="chat-title">Email Draft Ready</div>
+                    <ul>
+                        <li><strong>Action:</strong> Summarized 'Q3_Financials.pdf' (142 pages)</li>
+                        <li><strong>Draft:</strong> "Hi team, Q3 revenue grew by 14%, driven by enterprise sales. Key risks identified in section 4. See attached."</li>
+                    </ul>
+                </div>
             </div>
-            
+
             <!-- Scholar -->
             <div class="showcase-card glass-panel hover-target reveal-right delay-4">
                 <div class="card-icon">🎓</div>
                 <h3>For Scholars</h3>
                 <p>Analyze massive PDFs and research papers entirely offline. No internet quotas, no subscription limits—just raw local computing power accelerating your research.</p>
                 <!-- UI Mockup: Chat -->
-                <div class="ui-chat-snippet">
-                    <div class="chat-title">Project ARIA - codedbyozzy.github.io</div>
+                <div class="ui-chat-snippet" style="border-color: #f59e0b;">
+                    <div class="chat-title">Project ARIA - Research</div>
                     <ul>
-                        <li><strong>FRIDAY:</strong> Next-gen smart assistant for desktop</li>
-                        <li><strong>ARIA:</strong> Evolved from FRIDAY Synapse - built on a 7-stone cognitive architecture</li>
+                        <li><strong>Input:</strong> Cross-reference the 3 attached neurology papers.</li>
+                        <li><strong>ARIA:</strong> All 3 papers agree on the dopaminergic pathway degradation, but Smith et al. (2025) suggests an alternative intervention.</li>
                     </ul>
                 </div>
             </div>
@@ -261,50 +274,68 @@ function calculatePhysics() {
         </div>
         
         <div class="bento-grid">
-            <div class="bento-card glass-panel reveal-left">
-                <h3>Voice Engine</h3>
-                <p>Native Text-to-Speech integration allows ARIA to speak to you with natural phrasing. Hands-free productivity at its finest.</p>
-            </div>
             <div class="bento-card glass-panel reveal-up">
                 <h3>Screen Vision</h3>
                 <p>ARIA can "see" what is on your screen. It processes UI elements and visual data contextually without taking screenshots to the cloud.</p>
             </div>
-            <div class="bento-card glass-panel reveal-right hover-target" style="padding:0; overflow:hidden;">
-                <!-- UI Mockup: Integrations -->
-                <div style="padding: 2.5rem 2.5rem 1rem;">
-                    <h3>App Integrations</h3>
-                    <p style="font-size: 0.9rem;">Connect accounts like Discord, Spotify.</p>
-                </div>
-                <div class="ui-integrations">
-                    <div class="ui-integration-item">
-                        <div class="int-icon discord">D</div>
-                        <div class="int-info">
-                            <strong>Discord</strong>
-                            <span>Read status and send messages</span>
-                        </div>
-                        <button class="int-btn">Connect</button>
-                    </div>
-                    <div class="ui-integration-item">
-                        <div class="int-icon spotify">S</div>
-                        <div class="int-info">
-                            <strong>Spotify</strong>
-                            <span>Music control and read playlists</span>
-                        </div>
-                        <button class="int-btn">Connect</button>
-                    </div>
-                    <div class="ui-integration-item" style="border-bottom:none;">
-                        <div class="int-icon youtube">▶</div>
-                        <div class="int-info">
-                            <strong>YouTube Music</strong>
-                            <span>Music search and playlists</span>
-                        </div>
-                        <button class="int-btn">Connect</button>
-                    </div>
-                </div>
+            <div class="bento-card glass-panel reveal-right">
+                <h3>Cross-App Overlay</h3>
+                <p>Whether you're in a browser, a code editor, or a game, ARIA overlays seamlessly. Triggered by Alt+Space or text selection.</p>
             </div>
             <div class="bento-card glass-panel col-span-full reveal-up delay-2">
                 <h3>Agentic Workflow (Router)</h3>
                 <p>The system intelligently routes your queries. Simple grammar checks use fast local LLMs, while complex code refactoring spins up dedicated isolated agent instances. A master orchestrator in your OS.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Integrations Dedicated Section -->
+    <section id="integrations" class="fullscreen-section dark-section">
+        <div class="section-container reverse-layout">
+            <div class="text-content reveal-right">
+                <h2 class="section-title">Deeply <span class="text-cyan">Integrated.</span></h2>
+                <p class="section-desc">ARIA doesn't just talk to you. It talks to your apps. Connect your favorite services and let ARIA control them locally.</p>
+                <p class="section-desc">Plugins are lazy-loaded only when used, ensuring absolute zero bloat on your system memory.</p>
+            </div>
+            <div class="visual-content reveal-left">
+                <div class="ui-integrations-panel glass-panel hover-target">
+                    <div class="ui-integrations-header">
+                        <h3>App Integrations</h3>
+                        <p>Manage your connected services.</p>
+                    </div>
+                    <div class="ui-integrations">
+                        <div class="ui-integration-item">
+                            <div class="int-icon real-discord">
+                                <svg viewBox="0 0 127.14 96.36" width="28" height="28" fill="#fff"><path d="M107.7 8.07A105.15 105.15 0 0 0 81.47 0a72.06 72.06 0 0 0-3.36 6.83 97.68 97.68 0 0 0-29.08 0 72.37 72.37 0 0 0-3.36-6.83 105.15 105.15 0 0 0-26.23 8.07C2.93 32.55-3.17 56.63 1.13 80.4a105.73 105.73 0 0 0 32.2 16.2 77.7 77.7 0 0 0 6.89-11.1 68.42 68.42 0 0 1-10.85-5.18c.91-.66 1.8-1.34 2.66-2a75.57 75.57 0 0 0 64.32 0c.87.71 1.76 1.39 2.66 2a68.68 68.68 0 0 1-10.87 5.19 77 77 0 0 0 6.89 11.1 105.25 105.25 0 0 0 32.2-16.2c4.85-27.42-3.8-51.2-19.53-72.34zM42.68 65.3c-5.36 0-9.76-4.9-9.76-10.9s4.32-10.9 9.76-10.9 9.84 4.97 9.76 10.9c0 6-4.4 10.9-9.76 10.9zm41.78 0c-5.36 0-9.76-4.9-9.76-10.9s4.32-10.9 9.76-10.9 9.84 4.97 9.76 10.9c0 6-4.4 10.9-9.76 10.9z"/></svg>
+                            </div>
+                            <div class="int-info">
+                                <strong>Discord</strong>
+                                <span>Read status and send messages</span>
+                            </div>
+                            <button class="int-btn">Connect</button>
+                        </div>
+                        <div class="ui-integration-item">
+                            <div class="int-icon real-spotify">
+                                <svg viewBox="0 0 24 24" width="28" height="28" fill="#1DB954"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.52 17.34c-.24.36-.66.48-1.02.24-2.82-1.74-6.36-2.1-10.56-1.14-.42.12-.84-.12-.96-.54-.12-.42.12-.84.54-.96 4.56-1.02 8.52-.6 11.64 1.32.42.18.48.66.36 1.08zm1.44-3.18c-.3.48-.9.6-1.38.3-3.24-1.98-8.16-2.52-11.94-1.38-.54.18-1.14-.12-1.32-.66-.18-.54.12-1.14.66-1.32 4.32-1.26 9.72-.66 13.5 1.62.48.3.66.9.48 1.44zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.3c-.66.18-1.38-.18-1.56-.84-.18-.66.18-1.38.84-1.56 4.32-1.32 11.28-1.02 15.6 1.56.6.36.78 1.14.42 1.74-.36.6-1.14.78-1.74.42z"/></svg>
+                            </div>
+                            <div class="int-info">
+                                <strong>Spotify</strong>
+                                <span>Music control and read playlists</span>
+                            </div>
+                            <button class="int-btn">Connect</button>
+                        </div>
+                        <div class="ui-integration-item" style="border-bottom:none;">
+                            <div class="int-icon real-youtube">
+                                <svg viewBox="0 0 24 24" width="28" height="28" fill="#FF0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                            </div>
+                            <div class="int-info">
+                                <strong>YouTube Music</strong>
+                                <span>Music search and playlists</span>
+                            </div>
+                            <button class="int-btn">Connect</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -376,6 +407,6 @@ function calculatePhysics() {
         </div>
     </footer>
 
-    <script src="./script.js?v=2.1"></script>
+    <script src="./script.js?v=2.2"></script>
 </body>
 </html>
