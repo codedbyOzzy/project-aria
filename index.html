@@ -40,6 +40,16 @@
             <div class="badge">Forget Ordinary Assistants</div>
             <h1 class="huge-text">Your Computer's <br><span class="text-gradient">New Brain.</span></h1>
             <p class="hero-subtitle">Not trapped in a browser. No internet required. A fully private, autonomous AI Operating System running natively on your hardware.</p>
+            
+            <!-- UI Mockup: Input Bar -->
+            <div class="ui-input-bar glass-panel hover-target">
+                <div class="ui-input-icon">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="var(--accent-purple)"><path d="M12 2L2 22h20L12 2zm0 6l5 10H7l5-10z"/></svg>
+                </div>
+                <div class="ui-input-field">Ask ARIA anything...<span class="blinking-cursor">|</span></div>
+                <div class="ui-input-btn">Panel</div>
+            </div>
+
             <div class="scroll-indicator">
                 <span>Dive Deeper</span>
                 <div class="line"></div>
@@ -54,6 +64,72 @@
                 <h2 class="section-title">The <span class="text-gradient">Manifesto</span></h2>
                 <p class="section-desc manifesto-text">Big tech holds your data hostage in the cloud. Operating systems limit your potential. We built ARIA as a rebellion. It's the moment your computer awakens with its own intelligence.</p>
                 <p class="section-desc manifesto-text"><strong>Your Computer. Your Brain. Your Data.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- UI Mockup: The Dashboard -->
+    <section id="dashboard" class="padding-section">
+        <div class="section-header reveal-up">
+            <h2 class="section-title">The <span class="text-purple">Control Center</span></h2>
+            <p class="section-desc">A unified dashboard that gives you absolute oversight of your local AI.</p>
+        </div>
+        <div class="ui-dashboard glass-panel reveal-up delay-2 hover-target">
+            <!-- Dashboard Header -->
+            <div class="ui-dash-header">
+                <div class="ui-dash-title"><svg viewBox="0 0 24 24" width="20" height="20" fill="var(--accent-purple)"><path d="M12 2L2 22h20L12 2zm0 6l5 10H7l5-10z"/></svg> ARIA <span class="status-ready">● Ready</span></div>
+                <div class="ui-dash-tabs">
+                    <span class="active-tab">Dashboard</span>
+                    <span>Chat</span>
+                    <span>Night Shift</span>
+                </div>
+                <div class="ui-dash-controls">⚙️ ✕</div>
+            </div>
+            
+            <!-- Dashboard Stats Grid -->
+            <div class="ui-dash-stats">
+                <div class="ui-stat-card glass-panel">
+                    <div class="stat-time">19:12</div>
+                    <div class="stat-date">Saturday, 23 May</div>
+                </div>
+                <div class="ui-stat-row">
+                    <div class="ui-stat-card glass-panel">
+                        <div class="stat-value">1</div>
+                        <div class="stat-label">Conversations</div>
+                    </div>
+                    <div class="ui-stat-card glass-panel">
+                        <div class="stat-value text-purple">MINIMAX</div>
+                        <div class="stat-label">Provider</div>
+                    </div>
+                    <div class="ui-stat-card glass-panel">
+                        <div class="stat-value">4</div>
+                        <div class="stat-label">Tools active</div>
+                    </div>
+                    <div class="ui-stat-card glass-panel">
+                        <div class="stat-value">33m</div>
+                        <div class="stat-label">Session</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Dashboard Tasks -->
+            <div class="ui-dash-tasks">
+                <div class="ui-task glass-panel">
+                    <span class="task-dot green"></span>
+                    <div class="task-info">
+                        <div class="task-name">🌍 Searching the web...</div>
+                        <div class="task-status text-green">Completed</div>
+                    </div>
+                    <div class="task-time">19:01</div>
+                </div>
+                <div class="ui-task glass-panel">
+                    <span class="task-dot orange"></span>
+                    <div class="task-info">
+                        <div class="task-name">🌍 Searching the web...</div>
+                        <div class="task-status text-orange">Running...</div>
+                    </div>
+                    <div class="task-time">19:01</div>
+                </div>
             </div>
         </div>
     </section>
@@ -85,6 +161,14 @@
                 <div class="card-icon">🎓</div>
                 <h3>For Scholars</h3>
                 <p>Analyze massive PDFs and research papers entirely offline. No internet quotas, no subscription limits—just raw local computing power accelerating your research.</p>
+                <!-- UI Mockup: Chat -->
+                <div class="ui-chat-snippet">
+                    <div class="chat-title">Project ARIA - codedbyozzy.github.io</div>
+                    <ul>
+                        <li><strong>FRIDAY:</strong> Next-gen smart assistant for desktop</li>
+                        <li><strong>ARIA:</strong> Evolved from FRIDAY Synapse - built on a 7-stone cognitive architecture</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -116,16 +200,45 @@ function calculatePhysics() {
         </div>
     </section>
 
-    <!-- 5. Safe Swarm & Architecture -->
-    <section id="localai" class="fullscreen-section">
+    <!-- 5. Night Shift -->
+    <section id="nightshift" class="fullscreen-section">
+        <div class="section-container">
+            <div class="text-content reveal-left">
+                <h2 class="section-title">While You Sleep. <br><span class="text-cyan">Night Shift.</span></h2>
+                <p class="section-desc">Hand ARIA a massive task before bed, and wake up to a perfectly orchestrated report. Night Shift runs autonomously for hours.</p>
+                
+                <!-- UI Mockup: Night Shift -->
+                <div class="ui-nightshift glass-panel reveal-up delay-2 hover-target">
+                    <div class="nightshift-header">
+                        🌙 Night Shift
+                        <span class="sub-header">Autonomous safe mode (read-only + web search)</span>
+                    </div>
+                    <input type="text" class="nightshift-input" placeholder="Type night task... (e.g. research AI ethics deeply...)">
+                    <div class="nightshift-controls">
+                        <div class="ns-limit">Limit: 30 min • 50 turns</div>
+                        <button class="btn-primary ns-start">▶ Start</button>
+                    </div>
+                    <div class="ns-logs">
+                        <div class="log-item success">✔ Completed</div>
+                        <div class="log-item">🌙 Night shift started — limit: 30 min / 50 turns</div>
+                        <div class="log-item">🔧 🌍 Searching the web...</div>
+                        <div class="log-item success">✔ Completed (1 min). Report: C:\Users\...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safe Swarm & Architecture -->
+    <section id="localai" class="fullscreen-section dark-section">
         <canvas id="swarm-canvas"></canvas>
         <div class="section-container relative-z">
             <div class="text-content reveal-left">
-                <h2 class="section-title">Autonomous. <br><span class="text-cyan">Yet Safe.</span></h2>
+                <h2 class="section-title">Autonomous. <br><span class="text-purple">Yet Safe.</span></h2>
                 <p class="section-desc">ARIA isn't just one assistant; it's a <strong>Swarm of Agents</strong>. Researchers and Coders collaborate to solve complex tasks. But security is paramount: The <strong>Human-in-the-Loop</strong> protocol ensures no file is deleted and no command is executed without your explicit UI approval.</p>
                 <p class="section-desc">Powered by Ollama and local GPUs, billion-parameter models run at <strong>Zero Cost</strong> and with <strong>Absolute Privacy</strong>.</p>
                 
-                <div class="approval-mockup glass-panel reveal-up delay-2">
+                <div class="approval-mockup glass-panel reveal-up delay-2 hover-target">
                     <div class="approval-header">⚠️ Approval Required</div>
                     <div class="approval-body">
                         <p>ARIA wants to execute the following command:</p>
@@ -156,9 +269,30 @@ function calculatePhysics() {
                 <h3>Screen Vision</h3>
                 <p>ARIA can "see" what is on your screen. It processes UI elements and visual data contextually without taking screenshots to the cloud.</p>
             </div>
-            <div class="bento-card glass-panel reveal-right">
-                <h3>Cross-App Integration</h3>
-                <p>Whether you're in a browser, a code editor, or a game, ARIA overlays seamlessly. Triggered by Alt+Space or text selection.</p>
+            <div class="bento-card glass-panel reveal-right hover-target" style="padding:0; overflow:hidden;">
+                <!-- UI Mockup: Integrations -->
+                <div style="padding: 2.5rem 2.5rem 1rem;">
+                    <h3>App Integrations</h3>
+                    <p style="font-size: 0.9rem;">Connect accounts like Discord, Spotify.</p>
+                </div>
+                <div class="ui-integrations">
+                    <div class="ui-integration-item">
+                        <div class="int-icon discord">D</div>
+                        <div class="int-info">
+                            <strong>Discord</strong>
+                            <span>Read status and send messages</span>
+                        </div>
+                        <button class="int-btn">Connect</button>
+                    </div>
+                    <div class="ui-integration-item">
+                        <div class="int-icon spotify">S</div>
+                        <div class="int-info">
+                            <strong>Spotify</strong>
+                            <span>Music control and read playlists</span>
+                        </div>
+                        <button class="int-btn">Connect</button>
+                    </div>
+                </div>
             </div>
             <div class="bento-card glass-panel col-span-full reveal-up delay-2">
                 <h3>Agentic Workflow (Router)</h3>
