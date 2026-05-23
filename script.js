@@ -1,83 +1,145 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // --- Mockup Etkileşimi (FAB) ---
+
+    // --- 1. Custom Glow Cursor ---
+    const cursorGlow = document.getElementById('cursor-glow');
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        cursorGlow.style.left = `${mouseX}px`;
+        cursorGlow.style.top = `${mouseY}px`;
+    });
+
+    // Hover effects for cursor
+    const hoverTargets = document.querySelectorAll('.hover-target');
+    hoverTargets.forEach(target => {
+        target.addEventListener('mouseenter', () => {
+            cursorGlow.style.transform = 'translate(-50%, -50%) scale(1.5)';
+            cursorGlow.style.background = 'radial-gradient(circle, rgba(6, 182, 212, 0.3) 0%, rgba(124, 58, 237, 0.1) 40%, rgba(3, 3, 5, 0) 70%)';
+        });
+        target.addEventListener('mouseleave', () => {
+            cursorGlow.style.transform = 'translate(-50%, -50%) scale(1)';
+            cursorGlow.style.background = 'radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, rgba(6, 182, 212, 0.05) 40%, rgba(3, 3, 5, 0) 70%)';
+        });
+    });
+
+    // --- 2. Scroll Reveal Animations ---
+    const revealElements = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right');
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // --- 3. Interactive FAB Mockup ---
     const demoText = document.getElementById('demo-text');
     const fabMockup = document.getElementById('fab-mockup');
-    const fabAriaBtn = document.querySelector('.fab-aria');
-    
-    // Metin seçildiğinde simülasyon yap
+
     demoText.addEventListener('mouseup', () => {
         const selection = window.getSelection().toString().trim();
         if (selection.length > 0) {
-            // FAB'ı göster
             fabMockup.classList.add('active');
         } else {
-            // Seçim yoksa FAB'ı gizle
             fabMockup.classList.remove('active');
         }
     });
 
-    // Boşluğa tıklanınca FAB'ı gizle
     document.addEventListener('mousedown', (e) => {
         if (!demoText.contains(e.target) && !fabMockup.contains(e.target)) {
             fabMockup.classList.remove('active');
         }
     });
 
-    // Butonlara tıklanınca havalı bir log veya efekt verebiliriz
-    const buttons = fabMockup.querySelectorAll('button');
-    buttons.forEach(btn => {
+    const fabButtons = fabMockup.querySelectorAll('button');
+    fabButtons.forEach(btn => {
+        btn.dataset.originalText = btn.textContent;
         btn.addEventListener('click', () => {
             btn.style.transform = 'scale(0.9)';
             setTimeout(() => btn.style.transform = 'scale(1)', 150);
             
-            // Eğer "❓ ARIA" ise
-            if (btn.classList.contains('fab-aria')) {
-                btn.textContent = '✨ Yanıtlanıyor...';
+            btn.textContent = '✨ İşleniyor...';
+            setTimeout(() => {
+                btn.textContent = '✔ Tamamlandı';
                 setTimeout(() => {
-                    btn.textContent = '❓ ARIA';
                     fabMockup.classList.remove('active');
                     window.getSelection().removeAllRanges();
-                }, 1500);
-            } else {
-                btn.textContent = '⏳ İşleniyor...';
-                setTimeout(() => {
-                    btn.textContent = '✔ Tamamlandı';
-                    setTimeout(() => {
-                        fabMockup.classList.remove('active');
-                        window.getSelection().removeAllRanges();
-                        // Reset text
-                        btn.textContent = btn.dataset.originalText || btn.textContent;
-                    }, 1000);
-                }, 1500);
-            }
+                    btn.textContent = btn.dataset.originalText;
+                }, 1000);
+            }, 1200);
         });
-        
-        // Orijinal metni kaydet
-        if(!btn.dataset.originalText) {
-            btn.dataset.originalText = btn.textContent;
-        }
     });
 
-    // --- Scroll Animasyonları (Intersection Observer) ---
-    const revealElements = document.querySelectorAll('.reveal');
+    // --- 4. Canvas Particle Network (Safe Swarm) ---
+    const canvas = document.getElementById('swarm-canvas');
+    const ctx = canvas.getContext('2d');
     
-    const revealOptions = {
-        threshold: 0.2, // Elemanın %20'si göründüğünde tetikle
-        rootMargin: "0px 0px -50px 0px"
-    };
+    let width, height;
+    let particles = [];
+    
+    function resizeCanvas() {
+        width = canvas.width = canvas.offsetWidth;
+        height = canvas.height = canvas.offsetHeight;
+    }
+    
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
 
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) return;
+    class Particle {
+        constructor() {
+            this.x = Math.random() * width;
+            this.y = Math.random() * height;
+            this.vx = (Math.random() - 0.5) * 0.5;
+            this.vy = (Math.random() - 0.5) * 0.5;
+            this.radius = Math.random() * 2 + 1;
+        }
+        update() {
+            this.x += this.vx;
+            this.y += this.vy;
+            if(this.x < 0 || this.x > width) this.vx *= -1;
+            if(this.y < 0 || this.y > height) this.vy *= -1;
+        }
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(124, 58, 237, 0.5)';
+            ctx.fill();
+        }
+    }
+
+    for(let i = 0; i < 50; i++) {
+        particles.push(new Particle());
+    }
+
+    function animateParticles() {
+        ctx.clearRect(0, 0, width, height);
+        
+        for(let i = 0; i < particles.length; i++) {
+            particles[i].update();
+            particles[i].draw();
             
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target); // Sadece bir kere çalışsın
-        });
-    }, revealOptions);
-
-    revealElements.forEach(el => {
-        revealObserver.observe(el);
-    });
+            for(let j = i + 1; j < particles.length; j++) {
+                const dx = particles[i].x - particles[j].x;
+                const dy = particles[i].y - particles[j].y;
+                const dist = Math.sqrt(dx*dx + dy*dy);
+                
+                if(dist < 150) {
+                    ctx.beginPath();
+                    ctx.moveTo(particles[i].x, particles[i].y);
+                    ctx.lineTo(particles[j].x, particles[j].y);
+                    ctx.strokeStyle = `rgba(6, 182, 212, ${1 - dist/150})`;
+                    ctx.lineWidth = 1;
+                    ctx.stroke();
+                }
+            }
+        }
+        requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
 
 });

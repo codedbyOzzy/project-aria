@@ -6,133 +6,136 @@
     <title>ARIA - Sınırsız, Gizli, Otonom Kişisel AI</title>
     <meta name="description" content="ARIA, bilgisayarınızın işletim sistemine entegre çalışan, sıfır maliyetli ve tamamen gizli, otonom bir Yapay Zeka İşletim Sistemidir.">
     <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts: Inter -->
+    
+    <!-- Google Fonts: Outfit -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;600;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
+    
+    <!-- Custom Glow Cursor -->
+    <div id="cursor-glow"></div>
+
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="logo">ARIA <span>OS</span></div>
+        <div class="logo">ARIA</div>
         <div class="nav-links">
-            <a href="#about">Nedir?</a>
-            <a href="#timeline">Evrim (v2.0 - v2.5)</a>
-            <a href="#features">Özellikler</a>
-            <a href="https://github.com/codedbyOzzy/project-aria" target="_blank" class="btn-primary">GitHub'da İncele</a>
+            <a href="#hero">Başlangıç</a>
+            <a href="#localai">Kalkan</a>
+            <a href="#smartfab">Akıllı Pano</a>
+            <a href="#safeswarm">Sürü Zekası</a>
+            <a href="#nightshift">Night Shift</a>
         </div>
+        <a href="https://github.com/codedbyOzzy/project-aria" target="_blank" class="btn-primary hover-target">GitHub</a>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="glow glow-1"></div>
-        <div class="glow glow-2"></div>
-        <div class="hero-content">
-            <h1>Bilgisayarınızın <br> <span class="text-gradient">Yeni Beyni.</span></h1>
-            <p>Sıradan bir chatbot değil. İşletim sisteminize entegre çalışan, sıfır maliyetli, sınırları olmayan, otonom bir Kişisel Yapay Zeka İşletim Sistemi.</p>
-            <div class="hero-buttons">
-                <a href="#timeline" class="btn-secondary">Macerayı Keşfet</a>
-                <a href="https://github.com/codedbyOzzy/project-aria" target="_blank" class="btn-primary">Katıl ve Deneyimle</a>
-            </div>
+    <!-- 1. Hero Section (The Brain) -->
+    <section id="hero" class="fullscreen-section">
+        <div class="hero-bg-elements">
+            <div class="orb"></div>
+            <div class="grid-overlay"></div>
         </div>
-        
-        <!-- Interactive Mockup: Smart FAB -->
-        <div class="mockup-container">
-            <p class="mockup-hint">Metni seç ve ne olduğunu gör 👇</p>
-            <div class="mockup-text" id="demo-text">ARIA, işletim sistemindeki her hareketi anlar. Denemek için beni seç.</div>
-            
-            <div class="fab-mockup" id="fab-mockup">
-                <button>🌍 Çevir</button>
-                <button>✨ Düzelt</button>
-                <button>📝 Özetle</button>
-                <button class="fab-aria">❓ ARIA</button>
-            </div>
-        </div>
-    </header>
-
-    <!-- About ARIA -->
-    <section id="about" class="section">
-        <div class="section-header">
-            <h2>Neden <span class="text-gradient">ARIA?</span></h2>
-            <p>Web tarayıcılarına hapsolmuş asistanları unutun.</p>
-        </div>
-        <div class="cards-grid">
-            <div class="card glass">
-                <h3>🔒 Tam Gizlilik (Local AI)</h3>
-                <p>Verileriniz cihazınızdan asla çıkmaz. Ollama veya LM Studio üzerinden yerel GPU gücünüzü kullanarak tamamen çevrimdışı ve gizli çalışır.</p>
-            </div>
-            <div class="card glass">
-                <h3>⚡ Sıfır Maliyet</h3>
-                <p>İnternete ihtiyaç duymadan milyarlarca parametrelik devasa modelleri bedavaya kendi donanımınızla çalıştırırsınız.</p>
-            </div>
-            <div class="card glass">
-                <h3>🛠 İşletim Sistemi Entegrasyonu</h3>
-                <p>Herhangi bir ekranda, uygulamada veya kod editöründe kısayol tuşuyla (Alt+Space) veya farenizle anında yanınızda belirir.</p>
+        <div class="hero-content reveal-up">
+            <div class="badge">Sıradan Asistanları Unutun</div>
+            <h1 class="huge-text">İşletim Sisteminizin <br><span class="text-gradient">Yeni Beyni.</span></h1>
+            <p class="hero-subtitle">Tarayıcıya hapsolmayan, internete ihtiyaç duymayan, tamamen gizli ve otonom bir Yapay Zeka İşletim Sistemi (AI OS).</p>
+            <div class="scroll-indicator">
+                <span>Derinlere İn</span>
+                <div class="line"></div>
             </div>
         </div>
     </section>
 
-    <!-- Timeline Journey -->
-    <section id="timeline" class="section timeline-section">
-        <div class="section-header">
-            <h2>ARIA'nın <span class="text-gradient">Evrimi</span></h2>
-            <p>Kısa sürede kat edilen devasa mesafe (v2.0 - v2.5)</p>
-        </div>
-        
-        <div class="timeline">
-            <!-- v2.0 - v2.1 -->
-            <div class="timeline-item reveal">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content glass">
-                    <h3>v2.0 & v2.1: Temel & Algı</h3>
-                    <p>ARIA'nın modern, hızlı ve akışkan arayüzü kuruldu. Ekranda gördüğünüz her şeyi algılayabilen <strong>Görsel Farkındalık (Vision)</strong> ve size kendi sesiyle yanıt verebilen gelişmiş <strong>Ses Motoru</strong> hayata geçti.</p>
-                </div>
+    <!-- 2. Local AI (Kalkan & Gizlilik) -->
+    <section id="localai" class="fullscreen-section dark-section">
+        <div class="section-container">
+            <div class="text-content reveal-left">
+                <h2 class="section-title">v2.2 <br><span class="text-cyan">Yerel Zeka Kalkanı</span></h2>
+                <p class="section-desc">Bulut zorunluluğuna son. ARIA, cihazınızdaki yerel gücü (Ollama / Edge) kullanarak internete hiç çıkmadan işlem yapar. Milyarlarca parametrelik devasa modelleri <strong>sıfır maliyetle</strong> ve <strong>tam gizlilikle</strong> kendi donanımınızda çalıştırın.</p>
             </div>
-
-            <!-- v2.2 -->
-            <div class="timeline-item reveal">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content glass">
-                    <h3>v2.2: Yerel Zeka Kalkanı</h3>
-                    <p>Bulut zorunluluğuna son! <strong>LocalTextRouter</strong> ile çeviri, düzeltme veya özetleme gibi tüm küçük işlemler internet kullanılmadan, anında ve <strong>Sıfır Maliyetle</strong> cihazınızdaki yerel GPU/CPU üzerinden (Ollama) çözülmeye başlandı.</p>
-                </div>
-            </div>
-
-            <!-- v2.3 -->
-            <div class="timeline-item reveal">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content glass">
-                    <h3>v2.3: Akıllı Pano (FAB)</h3>
-                    <p>Fare imlecinizin ucundaki sihir! Windows'un herhangi bir yerinde metin, kod veya URL kopyaladığınızda, içeriğin türünü algılayıp size <em>"Kodu Açıkla"</em> veya <em>"Sayfayı Özetle"</em> gibi akıllı hap butonlar sunan şeffaf asistan barı.</p>
-                </div>
-            </div>
-
-            <!-- v2.4 -->
-            <div class="timeline-item reveal">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content glass">
-                    <h3>v2.4: Safe Swarm (Sürü Zekası)</h3>
-                    <p>ARIA tek boyutlu olmaktan çıkıp bir <strong>Ajanlar Sürüsüne</strong> dönüştü. "Araştırmacı" ve "Yazılımcı" gibi roller kendi aralarında görev bölüşüyor. En önemlisi, tehlikeli bir komut (Örn: terminalde rm -rf) çalıştırılacaksa <strong>Kullanıcı Onayı</strong> isteyen muazzam bir Human-in-the-Loop altyapısı kuruldu.</p>
-                </div>
-            </div>
-
-            <!-- v2.5 -->
-            <div class="timeline-item reveal">
-                <div class="timeline-dot timeline-dot-future"></div>
-                <div class="timeline-content glass border-glow">
-                    <h3>v2.5: Night Shift (Ufukta)</h3>
-                    <p>Siz uyurken o çalışır. Geceden verdiğiniz kapsamlı bir araştırma veya analiz görevini asenkron olarak saatlerce yürütür, kendi kendine kararlar alır ve sabah masanızda mükemmel bir raporla sizi bekler.</p>
+            <div class="visual-content reveal-right">
+                <div class="shield-container">
+                    <div class="shield-core"></div>
+                    <div class="shield-ring ring-1"></div>
+                    <div class="shield-ring ring-2"></div>
+                    <div class="shield-text">VERİNİZ CİHAZDA KALIR</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer CTA -->
+    <!-- 3. Smart FAB (Akıllı Pano) -->
+    <section id="smartfab" class="fullscreen-section">
+        <div class="section-container reverse-layout">
+            <div class="text-content reveal-right">
+                <h2 class="section-title">v2.3 <br><span class="text-purple">İmlecinizin Ucundaki Sihir</span></h2>
+                <p class="section-desc">Windows'un neresinde olursanız olun (Chrome, VSCode, Word) bir metin kopyaladığınızda, içeriği algılayan şık ve transparan bir asistan barı hemen farenizin ucunda belirir.</p>
+                <p class="section-desc">ARIA uygulamasını açmanıza gerek kalmaz. Sadece seçin, kopyalayın ve sihri görün.</p>
+            </div>
+            <div class="visual-content reveal-left">
+                <div class="interactive-playground glass-panel hover-target">
+                    <p class="playground-hint">Sihri hissetmek için alttaki metni farenizle seçin:</p>
+                    <div class="selectable-code" id="demo-text">
+function calculatePhysics() {
+    return "E=mc^2";
+}
+                    </div>
+                    
+                    <div class="fab-mockup" id="fab-mockup">
+                        <button class="hover-target">💻 Kodu Açıkla</button>
+                        <button class="hover-target">✨ Optimize Et</button>
+                        <button class="fab-aria hover-target">❓ ARIA</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Safe Swarm (Sürü Zekası) -->
+    <section id="safeswarm" class="fullscreen-section dark-section">
+        <!-- Canvas for particle network will be here -->
+        <canvas id="swarm-canvas"></canvas>
+        <div class="section-container relative-z">
+            <div class="text-content reveal-up centered-text">
+                <h2 class="section-title">v2.4 <br><span class="text-gradient">Safe Swarm (Sürü Zekası)</span></h2>
+                <p class="section-desc max-w-800">ARIA tek boyutlu olmaktan çıkıp, kendi aralarında iletişim kurabilen bir ajanlar sürüsüne (Orchestrator, Researcher, Coder, Writer) dönüştü. Ancak en temel kural: <strong>İnsan Onayı (Human-in-the-Loop)</strong>. Tehlikeli hiçbir komut veya silme işlemi siz ekrandan izin vermeden çalıştırılamaz.</p>
+                
+                <div class="approval-mockup glass-panel reveal-up delay-2">
+                    <div class="approval-header">⚠️ Onay Bekleniyor</div>
+                    <div class="approval-body">
+                        <p>ARIA şu terminal komutunu çalıştırmak istiyor:</p>
+                        <code class="terminal-text">npm run build && deploy</code>
+                    </div>
+                    <div class="approval-actions">
+                        <button class="btn-reject hover-target">Reddet</button>
+                        <button class="btn-allow hover-target">İzin Ver</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Night Shift -->
+    <section id="nightshift" class="fullscreen-section">
+        <div class="section-container">
+            <div class="text-content reveal-left">
+                <h2 class="section-title">v2.5 <br><span class="text-cyan">Night Shift (Ufukta)</span></h2>
+                <p class="section-desc">Siz uyurken o çalışır. Gece verdiğiniz devasa bir araştırma, derleme veya kod analiz görevini saatlerce, limitlere takılmadan asenkron yürütür. Kendi kendine kararlar alır ve sabah masanızda mükemmel bir raporla sizi bekler.</p>
+                <div class="moon-illustration"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
-        <h2>Devrime Katılın</h2>
-        <p>ARIA tamamen şeffaf, sizin kontrolünüzde ve açık ara en yetenekli yapay zeka işletim sistemi.</p>
-        <a href="https://github.com/codedbyOzzy/project-aria" class="btn-primary pulse-btn">GitHub Reposuna Git</a>
-        <p class="copyright">© 2026 ARIA. Tüm hakları saklıdır.</p>
+        <div class="footer-content reveal-up">
+            <h2 class="huge-text">Geleceği<br>Bilgisayarınıza İndirin.</h2>
+            <div class="footer-actions">
+                <a href="https://github.com/codedbyOzzy/project-aria" target="_blank" class="btn-primary huge-btn hover-target">GitHub'da İncele</a>
+            </div>
+            <p class="copyright">© 2026 ARIA OS. Özel Olarak Geliştirildi.</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
